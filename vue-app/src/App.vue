@@ -5,8 +5,7 @@ import TheWelcome from './components/TheWelcome.vue'
 import { ref } from 'vue';
 
 const auth = createClient({
-  appId: '<app-did>',
-  tokenUrl: 'http://localhost:8787/token'
+  appId: '<app-did>'
 })
 
 const message = ref<string>('')

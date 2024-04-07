@@ -5,8 +5,7 @@ import logo from './logo.svg';
 import './App.css';
 
 const auth = createClient({
-  appId: '<app-did>',
-  tokenUrl: 'http://localhost:8787/token'
+  appId: '<app-did>'
 })
 
 async function loadMessage () {
