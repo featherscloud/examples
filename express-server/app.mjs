@@ -18,11 +18,9 @@ app.get('/', async (req, res) => {
       message: `Hello ${user.email}!`
     };
 
-    res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify(response));
+    res.status(200).json(response);
   } catch (error) {
-    res.writeHead(401, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({ error: error.message }));
+    res.status(200).json({ error: error.message });
   }
 });
 
