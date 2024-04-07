@@ -1,13 +1,17 @@
-import { createServer } from 'node:http';
+import express from 'express';
+import cors from 'cors';
 import { createVerifier } from '@featherscloud/auth';
 
 const verifier = createVerifier({
-  appId: 'did:key:z6MktdrwxrZqvPULEsQWKFo2SHQKdzShCoN6vfai1tMi6wWh'
+  appId: '<app-did>'
 });
 
-const server = createServer(async (req, res) => {
+const app = express();
+
+app.use(cors());
+app.get('/', async (req, res) => {
   try {
-    const header = req.headers['Authorization'];
+    const header = req.get('Authorization');
     // Verify the Authorization header and get the user information
     const { user } = await verifier.verifyHeader(header);
     const response = {
@@ -22,7 +26,6 @@ const server = createServer(async (req, res) => {
   }
 });
 
-// Listen locally on port 3333
-server.listen(3333, '127.0.0.1', () => {
-  console.log('Listening on http://localhost:3333');
-});
+app.listen(3030, '127.0.0.1', () =>
+  console.log('Server running on http://localhost:3030')
+);

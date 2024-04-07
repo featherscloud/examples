@@ -5,7 +5,7 @@ import logo from './logo.svg';
 import './App.css';
 
 const auth = createClient({
-  appId: 'did:key:z6MktdrwxrZqvPULEsQWKFo2SHQKdzShCoN6vfai1tMi6wWh',
+  appId: '<app-did>',
   tokenUrl: 'http://localhost:8787/token'
 })
 
@@ -13,7 +13,7 @@ async function loadMessage () {
   try {
     const authorization = await auth.getBearerToken()
     // Get data with authentication from your server
-    const response = await fetch('http://localhost:3333', {
+    const response = await fetch('http://localhost:3030', {
       headers: { authorization }
     })
     return response.json()

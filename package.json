@@ -1,0 +1,18 @@
+{
+  "name": "auth-starters",
+  "version": "1.0.0",
+  "description": "Examples to get started with Feathers Cloud Auth",
+  "main": "index.js",
+  "workspaces": [
+    "express-server",
+    "nodejs-server",
+    "react-app",
+    "vue-app"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
