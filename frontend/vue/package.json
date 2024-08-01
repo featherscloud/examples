@@ -11,7 +11,7 @@
     "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
-    "@featherscloud/auth": "^0.3.1",
+    "@featherscloud/auth": "^0.6.1",
     "vue": "^3.4.21"
   },
   "devDependencies": {
