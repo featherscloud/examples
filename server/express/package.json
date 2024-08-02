@@ -1,7 +1,7 @@
 {
   "name": "express-server",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple Express server using Feathers Cloud Auth for authentication",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,9 +9,9 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "@featherscloud/auth": "^0.3.1",
+    "@featherscloud/auth": "^0.6.2",
     "cors": "^2.8.5",
     "express": "^4.19.2"
   }

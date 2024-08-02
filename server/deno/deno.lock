@@ -1,0 +1,79 @@
+{
+  "version": "3",
+  "packages": {
+    "specifiers": {
+      "npm:@featherscloud/auth@^0.6.2": "npm:@featherscloud/auth@0.6.2"
+    },
+    "npm": {
+      "@featherscloud/auth@0.6.2": {
+        "integrity": "sha512-A8HyFu5hK3wKqX5OUuIXj3fByDRZ+tI2gfnT2Df2A2xpOO/eSbQWWecvK+pnA7wWU08J3zx6Mv3Tuqa/0N51mQ==",
+        "dependencies": {
+          "@feathersjs/errors": "@feathersjs/errors@5.0.29",
+          "@stablelib/ed25519": "@stablelib/ed25519@1.0.3",
+          "idb": "idb@8.0.0",
+          "uint8arrays": "uint8arrays@5.1.0"
+        }
+      },
+      "@feathersjs/errors@5.0.29": {
+        "integrity": "sha512-SLpvC36V84XKxucAtDC70GXkqmsvTE5SO4uSZXuTpK68VqeefbmSY+KSid2DY9dM0upZN7orwVBB5YciUMCIIg==",
+        "dependencies": {}
+      },
+      "@stablelib/binary@1.0.1": {
+        "integrity": "sha512-ClJWvmL6UBM/wjkvv/7m5VP3GMr9t0osr4yVgLZsLCOz4hGN9gIAFEqnJ0TsSMAN+n840nf2cHZnA5/KFqHC7Q==",
+        "dependencies": {
+          "@stablelib/int": "@stablelib/int@1.0.1"
+        }
+      },
+      "@stablelib/ed25519@1.0.3": {
+        "integrity": "sha512-puIMWaX9QlRsbhxfDc5i+mNPMY+0TmQEskunY1rZEBPi1acBCVQAhnsk/1Hk50DGPtVsZtAWQg4NHGlVaO9Hqg==",
+        "dependencies": {
+          "@stablelib/random": "@stablelib/random@1.0.2",
+          "@stablelib/sha512": "@stablelib/sha512@1.0.1",
+          "@stablelib/wipe": "@stablelib/wipe@1.0.1"
+        }
+      },
+      "@stablelib/hash@1.0.1": {
+        "integrity": "sha512-eTPJc/stDkdtOcrNMZ6mcMK1e6yBbqRBaNW55XA1jU8w/7QdnCF0CmMmOD1m7VSkBR44PWrMHU2l6r8YEQHMgg==",
+        "dependencies": {}
+      },
+      "@stablelib/int@1.0.1": {
+        "integrity": "sha512-byr69X/sDtDiIjIV6m4roLVWnNNlRGzsvxw+agj8CIEazqWGOQp2dTYgQhtyVXV9wpO6WyXRQUzLV/JRNumT2w==",
+        "dependencies": {}
+      },
+      "@stablelib/random@1.0.2": {
+        "integrity": "sha512-rIsE83Xpb7clHPVRlBj8qNe5L8ISQOzjghYQm/dZ7VaM2KHYwMW5adjQjrzTZCchFnNCNhkwtnOBa9HTMJCI8w==",
+        "dependencies": {
+          "@stablelib/binary": "@stablelib/binary@1.0.1",
+          "@stablelib/wipe": "@stablelib/wipe@1.0.1"
+        }
+      },
+      "@stablelib/sha512@1.0.1": {
+        "integrity": "sha512-13gl/iawHV9zvDKciLo1fQ8Bgn2Pvf7OV6amaRVKiq3pjQ3UmEpXxWiAfV8tYjUpeZroBxtyrwtdooQT/i3hzw==",
+        "dependencies": {
+          "@stablelib/binary": "@stablelib/binary@1.0.1",
+          "@stablelib/hash": "@stablelib/hash@1.0.1",
+          "@stablelib/wipe": "@stablelib/wipe@1.0.1"
+        }
+      },
+      "@stablelib/wipe@1.0.1": {
+        "integrity": "sha512-WfqfX/eXGiAd3RJe4VU2snh/ZPwtSjLG4ynQ/vYzvghTh7dHFcI1wl+nrkWG6lGhukOxOsUHfv8dUXr58D0ayg==",
+        "dependencies": {}
+      },
+      "idb@8.0.0": {
+        "integrity": "sha512-l//qvlAKGmQO31Qn7xdzagVPPaHTxXx199MhrAFuVBTPqydcPYBWjkrbv4Y0ktB+GmWOiwHl237UUOrLmQxLvw==",
+        "dependencies": {}
+      },
+      "multiformats@13.2.2": {
+        "integrity": "sha512-RWI+nyf0q64vyOxL8LbKtjJMki0sogRL/8axvklNtiTM0iFCVtHwME9w6+0P1/v4dQvsIg8A45oT3ka1t/M/+A==",
+        "dependencies": {}
+      },
+      "uint8arrays@5.1.0": {
+        "integrity": "sha512-vA6nFepEmlSKkMBnLBaUMVvAC4G3CTmO58C12y4sq6WPDOR7mOFYOi7GlrQ4djeSbP6JG9Pv9tJDM97PedRSww==",
+        "dependencies": {
+          "multiformats": "multiformats@13.2.2"
+        }
+      }
+    }
+  },
+  "remote": {}
+}

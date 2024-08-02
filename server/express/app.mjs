@@ -2,9 +2,8 @@ import express from 'express';
 import cors from 'cors';
 import { createVerifier } from '@featherscloud/auth';
 
-const verifier = createVerifier({
-  appId: '<app-did>'
-});
+const appId = '<your-app-id>';
+const verifier = createVerifier({ appId });
 
 const app = express();
 
@@ -15,7 +14,7 @@ app.get('/', async (req, res) => {
     // Verify the Authorization header and get the user information
     const { user } = await verifier.verifyHeader(header);
     const response = {
-      message: `Hello ${user.email}!`
+      message: `Hello ${user.email} from Express!`
     };
 
     res.status(200).json(response);
@@ -24,6 +23,8 @@ app.get('/', async (req, res) => {
   }
 });
 
-app.listen(3030, '127.0.0.1', () =>
-  console.log('Server running on http://localhost:3030')
-);
+app.listen(3030, '127.0.0.1', () => {
+  console.log(
+    `Express application ${appId} listening on http://localhost:3030`
+  );
+});
