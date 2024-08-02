@@ -1,0 +1,16 @@
+{
+  "name": "nodejs-server",
+  "version": "1.0.0",
+  "description": "A plain Node.js server using Feathers Cloud Auth for authentication",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@featherscloud/auth": "^0.6.2"
+  }
+}
