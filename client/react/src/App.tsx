@@ -1,27 +1,29 @@
-import { useEffect, useState } from 'react'
 import { createClient, LoginRequiredError } from '@featherscloud/auth'
+import { useEffect, useState } from 'react'
 
 import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import viteLogo from '/vite.svg'
 
 const appId = '<your-app-id>'
 const auth = createClient({ appId })
 
-async function loadMessage () {
+async function loadMessage() {
   try {
     // Get data with authentication from your server
     const response = await fetch('http://localhost:3030', {
       headers: {
-        Authorization: await auth.getHeader()
-      }
+        Authorization: await auth.getHeader(),
+      },
     })
     return response.json()
-  } catch (error) {
+  }
+  catch (error) {
     // Redirect to the login page when login is required
     if (error instanceof LoginRequiredError) {
       window.location.href = await auth.getLoginUrl(error)
-    } else {
+    }
+    else {
       throw error
     }
   }

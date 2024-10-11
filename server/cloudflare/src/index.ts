@@ -10,7 +10,7 @@ const headers = {
   'Access-Control-Allow-Origin': '*',
 }
 export default {
-  async fetch(request, env, ctx): Promise<Response> {
+  async fetch(request, _env, _ctx): Promise<Response> {
     // Handle CORS preflight request
     if (request.method === 'OPTIONS') {
       return new Response(null, {
