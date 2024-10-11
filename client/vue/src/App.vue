@@ -3,6 +3,7 @@ import { createClient, LoginRequiredError } from '@featherscloud/auth'
 
 import { ref } from 'vue';
 
+// Initialize the Feathers Cloud Auth client for your application
 const appId = '<your-app-id>'
 const auth = createClient({ appId })
 
@@ -34,8 +35,6 @@ loadMessage()
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
     <div class="wrapper">
       <h1>Feathers Cloud Auth VueJS demo</h1>
       <p>Message from the server is:</p>
@@ -43,32 +42,3 @@ loadMessage()
     </div>
   </header>
 </template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
