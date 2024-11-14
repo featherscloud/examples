@@ -20,15 +20,15 @@ const server = createServer(async (req, res) => {
   try {
     const header = req.headers.authorization
     // Verify the Authorization header and get the user information
-    const { user } = await verifier.verifyHeader(header)
+    const { user } = await verifier.verifyHeader(header!)
     const response = {
-      message: `Hello ${user.email} from node:http!`,
+      message: `Hello ${user!.email} from node:http!`,
     }
 
     res.writeHead(200, defaultHeaders)
     res.end(JSON.stringify(response))
   }
-  catch (error) {
+  catch (error: any) {
     res.writeHead(400, defaultHeaders)
     res.end(JSON.stringify({ error: error.message }))
   }
