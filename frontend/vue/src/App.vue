@@ -1,37 +1,25 @@
 <script setup lang="ts">
 import { createClient, LoginRequiredError } from '@featherscloud/auth'
-
 import { ref } from 'vue'
-
-const appId = '<your-app-id>'
-const auth = createClient({ appId })
+import { authFetch } from './auth'
 
 const message = ref<string>('')
 
 async function loadMessage() {
-  try {
-    // Get data with authentication from your server
-    const response = await fetch('http://localhost:3030', {
-      headers: {
-        // Get the authorization header for each request
-        Authorization: await auth.getHeader(),
-      },
-    })
-    const data = await response.json()
-    message.value = data.message
+  // Get data with authentication from your server
+  const response = await authFetch('http://localhost:3030/message', {
+    method: 'GET'
+  })
+
+  if (response.status >= 400) {
+    throw new Error(`Failed to load message: ${response.statusText}`)
   }
-  catch (error) {
-    // Redirect to the login page when login is required
-    if (error instanceof LoginRequiredError) {
-      window.location.href = await auth.getLoginUrl(error)
-    }
-    else {
-      throw error
-    }
-  }
+
+  const data = await response.json()
+  message.value = data.message
 }
 
-loadMessage()
+loadMessage().catch((error: any) => alert(`There was an error: ${error.message}`))
 </script>
 
 <template>

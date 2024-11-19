@@ -1,36 +1,28 @@
 <script lang="ts">
   import svelteLogo from './assets/svelte.svg';
+  import { authFetch } from './auth';
   import viteLogo from '/vite.svg';
-
-  import { createClient, LoginRequiredError } from '@featherscloud/auth';
-
-  const appId = '<your-app-id>';
-  const auth = createClient({ appId });
 
   let message = '';
 
   async function loadMessage() {
-    try {
-      // Get data with authentication from your server
-      const response = await fetch('http://localhost:3030', {
-        headers: {
-          Authorization: await auth.getHeader()
-        }
-      });
-      const body = await response.json();
+    // Get data with authentication from your server
+    const response = await authFetch('http://localhost:3030/message', {
+      method: 'GET'
+    });
 
-      message = body.message;
-    } catch (error) {
-      // Redirect to the login page when login is required
-      if (error instanceof LoginRequiredError) {
-        window.location.href = await auth.getLoginUrl(error);
-      } else {
-        throw error;
-      }
+    if (response.status >= 400) {
+      throw new Error(`Failed to load message: ${response.statusText}`);
     }
+
+    const body = await response.json();
+
+    message = body.message;
   }
 
-  loadMessage();
+  loadMessage().catch((error: any) =>
+    alert(`There was an error: ${error.message}`)
+  );
 </script>
 
 <main>

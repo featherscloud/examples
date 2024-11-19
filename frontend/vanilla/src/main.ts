@@ -1,24 +1,29 @@
 import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
+import { authFetch } from './auth.js'
+
+async function loadMessage() {
+  // Get data with authentication from your server
+  const response = await authFetch('http://localhost:3030/message', {
+    method: 'GET'
+  })
+
+  if (response.status >= 400) {
+    throw new Error(`Failed to load message: ${response.statusText}`)
+  }
+
+  const data = await response.json()
+
+  document.getElementById('message')!.innerHTML = data.message
+}
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
+    <div class="wrapper">
+      <h1>Feathers Cloud Auth + TypeScript demo</h1>
+      <p>Message from the server is:</p>
+      <h2 id="message"></h2>
     </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
   </div>
 `
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+loadMessage().catch((error: any) => alert(`There was an error: ${error.message}`))

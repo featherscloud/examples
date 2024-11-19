@@ -1,5 +1,5 @@
 {
-  "name": "deno",
+  "name": "deno-server",
   "version": "1.0.0",
   "description": "A simple Deno server using Feathers Cloud Auth for authentication",
   "author": "",
@@ -7,7 +7,7 @@
   "keywords": [],
   "main": "index.js",
   "scripts": {
-    "start": "deno run --allow-net server.ts",
+    "start": "deno run --allow-net src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

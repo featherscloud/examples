@@ -1,4 +1,4 @@
-import { authenticateRequest } from './authenticate'
+import { authenticateRequest } from "./authenticate.ts"
 
 // Headers for handling CORS
 const headers = {
@@ -8,8 +8,9 @@ const headers = {
   'Access-Control-Allow-Origin': '*',
 }
 
-export default {
-  async fetch(request, _env, _ctx): Promise<Response> {
+const server = Bun.serve({
+  port: 3030,
+  async fetch(request) {
     // Get the path from the request object
     const url = new URL(request.url);
     const path = url.pathname;
@@ -22,14 +23,15 @@ export default {
           headers,
         })
       } else if (path === '/message') {
+        // Verify the Authorization header and get the user information
         const { user } = await authenticateRequest(request)
-
+  
         if (!user) {
           throw new Error('Cloud auth user not found')
         }
   
         const body = {
-          message: `Hello ${user.email} from Cloudflare Worker!`,
+          message: `Hello ${user.email} from BunJS!`,
         }
   
         return Response.json(body, {
@@ -47,4 +49,6 @@ export default {
       })
     }
   },
-} satisfies ExportedHandler<Env>
+})
+
+console.log(`BunJS application listening on http://localhost:${server.port}`)

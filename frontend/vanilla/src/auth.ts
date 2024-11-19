@@ -28,7 +28,7 @@ export async function authFetch(url: string, options?: RequestInit) {
       // Redirect to login page
       window.location.href = await auth.getLoginUrl(error)
     }
-    
+
     throw error
   }
 }

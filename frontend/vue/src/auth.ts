@@ -27,8 +27,8 @@ export async function authFetch(url: string, options?: RequestInit) {
     if (error instanceof LoginRequiredError) {
       // Redirect to login page
       window.location.href = await auth.getLoginUrl(error)
+    } else {
+      throw error
     }
-    
-    throw error
   }
 }

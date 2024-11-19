@@ -8,13 +8,13 @@
   "main": "index.js",
   "workspaces": [
     "server/*",
-    "client/*"
+    "frontend/*"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "update-dependencies": "npm exec --workspaces --include-workspace-root -- ncu -u"
   },
   "devDependencies": {
-    "npm-check-updates": "^17.0.0"
+    "npm-check-updates": "^17.1.11"
   }
 }
