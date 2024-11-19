@@ -13,22 +13,23 @@ export const auth = createClient({ appId })
  * @returns The fetch response
  */
 export async function authFetch(url: string, options?: RequestInit) {
-  try {
-    const authHeader = await auth.getHeader()
+  const headers = new Headers(options?.headers)
 
-    return fetch(url, {
-      ...options,
-      headers: {
-        ...options?.headers,
-        Authorization: authHeader
-      }
-    })
+  try {
+    // Set the authorization header with the Feathers Cloud Auth token
+    headers.set('Authorization', await auth.getHeader())
   } catch (error) {
     if (error instanceof LoginRequiredError) {
-      // Redirect to login page
+      // Redirect to login page if a login is required
       window.location.href = await auth.getLoginUrl(error)
+    } else {
+      // Throw any other error
+      throw error
     }
-
-    throw error
   }
+
+  return fetch(url, {
+    ...options,
+    headers
+  })
 }
