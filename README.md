@@ -13,7 +13,7 @@ To get started with Feathers Cloud Auth, sign up and create a new organization a
 Then, with [NodeJS](https://nodejs.org/en) installed, clone this repository and install all dependencies:
 
 ```sh
-git clone git@github.com:featherscloud/examples.git
+git clone git@github.com:feathersdev/examples.git
 cd examples
 npm install
 ```
