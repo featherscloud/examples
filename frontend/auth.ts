@@ -1,7 +1,16 @@
 import { createClient, LoginRequiredError } from '@featherscloud/auth'
 
+/**
+ * The public application identifier for your Feathers Cloud app.
+ * You can change the login page theme and other settings at
+ * https://app.feathers.cloud/app/<your-app-id>
+ */
 export const appId = '<your-app-id>'
 
+/**
+ * The Feathers Cloud auth client instance. Use it to get the current user,
+ * the current token, and to log in and log out.
+ */
 export const auth = createClient({ appId })
 
 /**
