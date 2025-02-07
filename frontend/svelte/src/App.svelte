@@ -24,7 +24,7 @@
 </script>
 
 <main>
-  <h1>Feathers Cloud Svelte Demo</h1>
+  <h1>Feathers Auth Svelte Demo</h1>
   <p>The message from the server is:</p>
   <h2>{message}</h2>
 </main>

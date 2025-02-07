@@ -1,14 +1,14 @@
-# Feathers Cloud Examples
+# Feathers Examples
 
-Examples to get started with Feathers Cloud Auth.
+Examples to get started with Feathers Auth.
 
 ## Getting started
 
-This repository contains examples for **adding scalable user authentication** to different API servers (NodeJS, Cloudflare and Deno) and web frontends (React, Vue, Svelte) using [Feathers Cloud Auth](https://feathers.cloud/auth).
+This repository contains examples for **adding scalable user authentication** to different API servers (NodeJS, Cloudflare and Deno) and web frontends (React, Vue, Svelte) using [Feathers Auth](https://feathers.dev/auth).
 
-To get started with Feathers Cloud Auth, sign up and create a new organization and application at
+To get started with Feathers Auth, sign up and create a new organization and application at
 
-**[app.feathers.cloud](https://app.feathers.cloud)**
+**[app.feathers.dev](https://app.feathers.dev)**
 
 Then, with [NodeJS](https://nodejs.org/en) installed, clone this repository and install all dependencies:
 
@@ -22,7 +22,7 @@ Make sure to copy your public application id from the dashboard to replace it in
 
 ## Servers
 
-The `server/` folder contains examples for verifying a request that uses a Feathers Cloud Auth access token and getting the user information. See below how to run it on different platforms.
+The `server/` folder contains examples for verifying a request that uses a Feathers Auth access token and getting the user information. See below how to run it on different platforms.
 
 ### NodeJS
 
@@ -60,7 +60,7 @@ deno run --allow-net server.ts
 
 ### Cloudflare Worker
 
-To use Feathers Cloud Auth with a [Cloudflare worker](https://workers.cloudflare.com/), replace `<your-app-id>` in `server/cloudflare/index.ts` with your application id. Then run
+To use Feathers Auth with a [Cloudflare worker](https://workers.cloudflare.com/), replace `<your-app-id>` in `server/cloudflare/index.ts` with your application id. Then run
 
 ```
 cd server/cloudflare

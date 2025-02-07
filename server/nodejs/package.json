@@ -1,7 +1,7 @@
 {
   "name": "nodejs-server",
   "version": "1.0.0",
-  "description": "A plain Node.js server using Feathers Cloud Auth for authentication",
+  "description": "A plain Node.js server using Feathers Auth for authentication",
   "author": "",
   "license": "MIT",
   "keywords": [],
