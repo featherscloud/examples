@@ -25,7 +25,7 @@ function App() {
 
   return (
     <>
-      <h1>Feathers Cloud Auth React Demo</h1>
+      <h1>Feathers Auth React Demo</h1>
       <div className="card">
         <p>The message from the server is:</p>
       </div>

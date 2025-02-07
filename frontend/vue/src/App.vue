@@ -25,7 +25,7 @@ loadMessage().catch((error: any) => alert(`There was an error: ${error.message}`
 <template>
   <header>
     <div class="wrapper">
-      <h1>Feathers Cloud Auth VueJS demo</h1>
+      <h1>Feathers Auth VueJS demo</h1>
       <p>Message from the server is:</p>
       <h2><strong>{{ message }}</strong></h2>
     </div>

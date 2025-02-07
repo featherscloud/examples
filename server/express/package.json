@@ -1,7 +1,7 @@
 {
   "name": "express-server",
   "version": "1.0.0",
-  "description": "A simple Express server using Feathers Cloud Auth for authentication",
+  "description": "A simple Express server using Feathers Auth for authentication",
   "author": "",
   "license": "MIT",
   "keywords": [],

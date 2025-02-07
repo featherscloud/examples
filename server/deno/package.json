@@ -1,7 +1,7 @@
 {
   "name": "deno-server",
   "version": "1.0.0",
-  "description": "A simple Deno server using Feathers Cloud Auth for authentication",
+  "description": "A simple Deno server using Feathers Auth for authentication",
   "author": "",
   "license": "MIT",
   "keywords": [],

@@ -1,5 +1,6 @@
-import { CloudAuthUser, createVerifier } from '@featherscloud/auth'
-import type { Request, Response, NextFunction } from 'express'
+import type { CloudAuthUser } from '@featherscloud/auth'
+import type { NextFunction, Request, Response } from 'express'
+import { createVerifier } from '@featherscloud/auth'
 
 const appId = '<your-app-id>'
 const verifier = createVerifier({ appId })
@@ -14,22 +15,22 @@ declare global {
 }
 
 /**
- * Authenticates a request using Feathers Cloud Auth.
+ * Authenticates a request using Feathers Auth.
  * Will throw an error if verification failed.
- * 
+ *
  * @param req The Express or NodeJS request object
  * @returns The authenticated request information like `user` and `token`
  */
 export async function authenticateRequest(req: Request) {
-  const header = req.headers['authorization']
-  
+  const header = req.headers.authorization
+
   return verifier.verifyHeader(header!)
 }
 
 /**
- * An Express middleware that authenticates a request using Feathers Cloud Auth.
+ * An Express middleware that authenticates a request using Feathers Auth.
  * If successful, the authenticated user is added as `req.user`.
- * 
+ *
  * @param req The Express request object
  * @param _res The Express response object
  * @param next Next handler
@@ -42,7 +43,8 @@ export async function authenticate(req: Request, _res: Response, next: NextFunct
     req.user = user
 
     next()
-  } catch (error: unknown) {
+  }
+  catch (error: unknown) {
     // Pass the error to the Express error handler
     next(error)
   }

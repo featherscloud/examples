@@ -1,10 +1,10 @@
-import { IncomingMessage } from 'node:http'
+import type { IncomingMessage } from 'node:http'
 import { createVerifier } from '@featherscloud/auth'
 
 /**
- * The public application identifier for your Feathers Cloud app.
+ * The public application identifier for your Feathers app.
  * You can change the login page theme and other settings at
- * https://app.feathers.cloud/app/<your-app-id>
+ * https://app.feathers.dev/app/<your-app-id>
  */
 const appId = '<your-app-id>'
 
@@ -15,14 +15,14 @@ const appId = '<your-app-id>'
 const verifier = createVerifier({ appId })
 
 /**
- * Authenticates a request using Feathers Cloud Auth.
+ * Authenticates a request using Feathers Auth.
  * Will throw an error if verification failed.
- * 
+ *
  * @param req The Express or NodeJS request object
  * @returns The authenticated request information like `user` and `token`
  */
 export async function authenticateRequest(req: IncomingMessage) {
   const header = req.headers.authorization
-  
+
   return verifier.verifyHeader(header!)
 }

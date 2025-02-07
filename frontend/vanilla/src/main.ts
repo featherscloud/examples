@@ -1,10 +1,10 @@
-import './style.css'
 import { authFetch } from './auth.js'
+import './style.css'
 
 async function loadMessage() {
   // Get data with authentication from your server
   const response = await authFetch('http://localhost:3030/message', {
-    method: 'GET'
+    method: 'GET',
   })
 
   if (response.status >= 400) {
@@ -19,7 +19,7 @@ async function loadMessage() {
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
     <div class="wrapper">
-      <h1>Feathers Cloud Auth + TypeScript demo</h1>
+      <h1>Feathers Auth + TypeScript demo</h1>
       <p>Message from the server is:</p>
       <h2 id="message"></h2>
     </div>
